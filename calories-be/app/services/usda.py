@@ -12,6 +12,7 @@ async def fetch_calories(dish_name: str):
         response = await client.get(url, params=params)
         if response.status_code == 200:
             data = response.json()
+            print(data)
             if data["foods"]:
                 food = data["foods"][0]
                 name = food.get("description", "unknown").lower()
